@@ -75,3 +75,4 @@ const somePositive = numbers.some(function (value) {
 });
 
 console.log(somePositive);
+console.log(`hey`);
