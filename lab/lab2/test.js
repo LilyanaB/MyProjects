@@ -68,11 +68,201 @@
 
 // console.log(courses);
 
-const numbers = [1, 2, 3, 4, `abc`];
+// const somePositive = numbers.some(function (value) {
+//   return value === "abc";
+// });
 
-const somePositive = numbers.some(function (value) {
-  return value === "abc";
-});
+// console.log(somePositive);
+// console.log(`hey`);
+// const numbers = [1, 2, 3, 4, `abc`];
 
-console.log(somePositive);
-console.log(`hey`);
+// const filtered = numbers.filter(function (value) {
+//   return value >= 0;
+// });
+// console.log(filtered);
+
+// const run = () => {
+//   console.log(`hello`);
+// };
+// console.log(run);
+// run.id = 2;
+// console.log(run)
+
+// FUNCTIONS
+
+// function logger() {
+//   console.log(`log something in the console`);
+// }
+
+// logger();
+
+//Paramenters
+// function fruitProcessor(apples, oranges) {
+//   const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+//   return juice;
+// }
+// console.log(fruitProcessor(2, 7));
+// const appleJuice = function (apples, oranges) {
+//   const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+//   return juice;
+// };
+// console.log(appleJuice(5, 4));
+
+// function calcAge1(birthYear) {
+//   return 2037 - birthYear;
+// }
+// console.log(calcAge1(1991));
+
+// const calcAge3 = (birthYear) => 2037 - birthYear;
+
+// const age3 = calcAge3(2022);
+// console.log(age3);
+
+// const yearsUntilRetirement = (birthYear, name) => {
+//   let age = 2037 - birthYear;
+//   let retirementAge = 65 - age;
+//   return `${name} rerires in ${retirementAge}`;
+// };
+
+// console.log(yearsUntilRetirement(1991, "Johnas"));
+// console.log(yearsUntilRetirement(1980, "Bob"));
+
+// CALLBACK Functions
+
+// function cutFruitPieces(fruit) {
+//   return fruit * 4;
+// }
+
+// function fruitProcessor(apples, oranges) {
+//   let applePieces = cutFruitPieces(apples);
+//   let orangePieces = cutFruitPieces(oranges);
+//   const juice = `Juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges.`;
+//   return juice;
+// }
+// console.log(fruitProcessor(2,3))
+
+// const calcAverage = (score1, score2, score3) => {
+//   return (score1 + score2 + score3) / 3;
+// };
+
+// const avgDolphins = calcAverage(85, 54, 41);
+// const avgKoalas = calcAverage(23, 34, 77);
+
+// function checkWinner(avgD, avgK) {
+//   if (avgD * 2 > avgK * 2) {
+//     return `Dolphins with ${avgD} points`;
+//   } else {
+//     return `Koalas wutg ${avgK} points`;
+//   }
+// }
+
+// const winner = function (scoreD, scoreK) {
+//   const winnerTeam = checkWinner(scoreD, scoreK);
+//   return `Winner team is ${winnerTeam}`;
+// };
+
+// console.log(winner(avgDolphins, avgKoalas));
+
+// const johnas = {
+//   name: "Johnas",
+//   age: 25,
+//   profession: "teacher",
+//   isMarried: false,
+//   frieds: ["Lisa", "John", "Bob", "Michael"],
+//   retirementIn: function () {
+//     return 65 - this.age;
+//   },
+// };
+
+// console.log(johnas.profession);
+
+// console.log(
+//   `${johnas.name} has ${johnas.frieds.length} friends and his best friend is ${
+//     johnas.frieds[2]
+//   }. He will retire in ${johnas.retirementIn()} years.`
+// );
+
+// const Mark = {
+//   fullName: "Mark Miller",
+//   mass: 78,
+//   height: 1.69,
+//   BMI: function () {
+//     return this.mass / this.height ** 2;
+//   },
+// };
+
+// const John = {
+//   fullName: "John Smith",
+//   mass: 92,
+//   height: 1.95,
+//   BMI: function () {
+//     return this.mass / this.height ** 2;
+//   },
+// };
+
+// const higherBMI =
+//   John.BMI() > Mark.BMI()
+//     ? `${John.fullName}'s BMI (${John.BMI()}) is higher than ${
+//         Mark.fullName
+//       }'s BMI (${Mark.BMI()}) `
+//     : `${Mark.fullName}'s BMI (${Mark.BMI()}) is higher than ${
+//         John.fullName
+//       }'s BMI (${John.BMI()}) `;
+// console.log(higherBMI);
+
+// const bookings = [];
+// const createBooking = function (
+//   flightNumber,
+//   numPassangers = 0,
+//   price = numPassangers * 225
+// ) {
+//   const booking = {
+//     flightNumber,
+//     numPassangers,
+//     price,
+//   };
+//   console.log(booking);
+//   bookings.push(booking);
+// };
+
+// createBooking("LH123", 3);
+
+// function Circle(radius) {
+//   this.radius = radius;
+//   this.draw = function () {
+//     console.log(draw);
+//   };
+// }
+// const circle = new Circle(1);
+// console.log(circle);
+
+// let x = 1;
+// let id = 12345;
+
+// let obj = {
+//   x,
+//   id
+// }
+
+// console.log(obj)
+
+// const person = {
+//   firstName: "Josh",
+//   age: 25,
+//   jobTitle: "Designer",
+// };
+// for (let key in person) {
+//   console.log(key, person[key]);
+// }
+
+const Person = function (firstName, birthYear) {
+  (this.name = firstName), (this.birthYear = birthYear);
+};
+
+const johnas = new Person("johnas", 2017);
+const mathilda = new Person("Mathilda", 2010);
+
+Person.prototype.calcAge = function () {
+  console.log(2045 - this.birthYear);
+};
+johnas.calcAge();
