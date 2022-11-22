@@ -255,14 +255,81 @@
 //   console.log(key, person[key]);
 // }
 
-const Person = function (firstName, birthYear) {
-  (this.name = firstName), (this.birthYear = birthYear);
+// const Person = function (firstName, birthYear) {
+//   (this.name = firstName), (this.birthYear = birthYear);
+// };
+
+// const johnas = new Person("johnas", 2017);
+// const mathilda = new Person("Mathilda", 2010);
+
+// Person.prototype.calcAge = function () {
+//   console.log(2045 - this.birthYear);
+// };
+// johnas.calcAge();
+
+const Person = function (firstName, age, profession) {
+  this.name = firstName;
+  this.age = age;
+  this.profession = profession;
 };
 
-const johnas = new Person("johnas", 2017);
-const mathilda = new Person("Mathilda", 2010);
+const person1 = new Person("Martha", 25, "teacher");
+const person2 = new Person("James", 45, "driver");
+console.log(person1);
 
-Person.prototype.calcAge = function () {
-  console.log(2045 - this.birthYear);
+person2["language"] = "English";
+console.log(person2);
+
+const Car = function (brand, color, doors, engine, year) {
+  this.brand = brand;
+  this.color = color;
+  this.doorNumber = doors;
+  this.engine = engine;
+  this.builtYear = year;
 };
-johnas.calcAge();
+
+const car1 = new Car("BMW", "blue", 5, "V8", 2018);
+console.log(car1);
+
+for (let item in car1) {
+  console.log(`${item}: ${car1[item]}`);
+}
+
+// const Products = function (vegetables, frouits, meat, milk) {
+//   this.vegetables = vegetables;
+//   this.frouits = frouits;
+//   this.meat = meat;
+//   this.milk = milk;
+// };
+
+// const shoppingCart1 = new Products(
+//   `tomatoes`,
+//   `lemons`,
+//   `chicken`,
+//   "goat milk"
+// );
+// console.log(shoppingCart1);
+
+// Car.prototype.calcAge = function () {
+//   console.log(2022 - this.builtYear);
+// };
+// const car3 = new Car("BMW", "blue", 5, "V8", 2015);
+// console.log(car3.calcAge());
+
+// for (let item in car3) {
+//   console.log(`${item}: ${car3[item]}`);
+// }
+
+// console.log(car3.__proto__);
+
+const btn = document.querySelector(".btn");
+let displayNum = document.querySelector(".number");
+
+let randomNum = function (max) {
+  let randomNum = Math.floor(Math.random() * max);
+  return randomNum;
+};
+
+btn.addEventListener("click", function () {
+  return (displayNum.textContent = randomNum(5));
+});
