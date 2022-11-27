@@ -267,33 +267,33 @@
 // };
 // johnas.calcAge();
 
-const Person = function (firstName, age, profession) {
-  this.name = firstName;
-  this.age = age;
-  this.profession = profession;
-};
+// const Person = function (firstName, age, profession) {
+//   this.name = firstName;
+//   this.age = age;
+//   this.profession = profession;
+// };
 
-const person1 = new Person("Martha", 25, "teacher");
-const person2 = new Person("James", 45, "driver");
-console.log(person1);
+// const person1 = new Person("Martha", 25, "teacher");
+// const person2 = new Person("James", 45, "driver");
+// console.log(person1);
 
-person2["language"] = "English";
-console.log(person2);
+// person2["language"] = "English";
+// console.log(person2);
 
-const Car = function (brand, color, doors, engine, year) {
-  this.brand = brand;
-  this.color = color;
-  this.doorNumber = doors;
-  this.engine = engine;
-  this.builtYear = year;
-};
+// const Car = function (brand, color, doors, engine, year) {
+//   this.brand = brand;
+//   this.color = color;
+//   this.doorNumber = doors;
+//   this.engine = engine;
+//   this.builtYear = year;
+// };
 
-const car1 = new Car("BMW", "blue", 5, "V8", 2018);
-console.log(car1);
+// const car1 = new Car("BMW", "blue", 5, "V8", 2018);
+// console.log(car1);
 
-for (let item in car1) {
-  console.log(`${item}: ${car1[item]}`);
-}
+// for (let item in car1) {
+//   console.log(`${item}: ${car1[item]}`);
+// }
 
 // const Products = function (vegetables, frouits, meat, milk) {
 //   this.vegetables = vegetables;
@@ -322,14 +322,196 @@ for (let item in car1) {
 
 // console.log(car3.__proto__);
 
-const btn = document.querySelector(".btn");
-let displayNum = document.querySelector(".number");
+// const btn = document.querySelector(".btn");
+// let displayNum = document.querySelector(".number");
 
-let randomNum = function (max) {
-  let randomNum = Math.floor(Math.random() * max);
-  return randomNum;
+// let randomNum = function (max) {
+//   let randomNum = Math.floor(Math.random() * max);
+//   return randomNum;
+// };
+
+// btn.addEventListener("click", function () {
+//   return (displayNum.textContent = randomNum(5));
+// });
+
+// const Car = function (brand, speed) {
+//   this.brand = brand;
+//   this.speed = speed;
+// };
+// const car1 = new Car("BMW", 120);
+// console.log(car1);
+
+// Car.prototype.accelerate = function () {
+//   return this.speed + 10;
+// };
+// console.log(car1.accelerate());
+// Car.prototype.break = function () {
+//   return this.speed - 5;
+// };
+// console.log(car1.break());
+
+// const Truck = function (brand, speed, color) {
+//   Car.call(this, brand, speed);
+//   this.color = color;
+// };
+// Truck.prototype = Object.create(Car.prototype);
+// const newCar = new Truck("MAN", 110, "white");
+
+// console.log(newCar.break());
+
+// const MenuItems = function (breakfast, lunch, dinner, deserts) {
+//   this.breakfast = breakfast;
+//   this.lunch = lunch;
+//   this.dinner = dinner;
+//   this.deserts = deserts;
+// };
+
+// const restorant1 = new MenuItems(
+//   ["eggs", "english breakfast", "grilled cheese"],
+//   "pizza",
+//   "steak",
+//   ["lava cacke", "chocolate"]
+// );
+
+// MenuItems.prototype.calcPrice = function(){
+//   console.log(`${this.breakfast[1]} and ${this.deserts[0]} will cost you 35$.`)
+// }
+// console.log(restorant1.calcPrice())
+
+// const Person = function (firstName, lastName, birthYear, profession) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.birthYear = birthYear;
+//   this.profession = profession;
+// };
+
+// const student = new Person(`John`, `Doe`, 1997, `Gamer`);
+// Person.prototype.calcAge = function () {
+//   return console.log(
+//     `${this.firstName} ${this.lastName}'s age is ${
+//       2025 - this.birthYear
+//     } years.`
+//   );
+// };
+// student.calcAge();
+// // -----------------------------
+
+// const Teacher = function (
+//   firstName,
+//   lastName,
+//   birthYear,
+//   profession,
+//   eyecolor
+// ) {
+//   Person.call(this, firstName, lastName, birthYear, profession);
+//   this.eyecolor = eyecolor;
+// };
+// Teacher.prototype = Object.create(Person.prototype);
+// const teacher1 = new Teacher("Maria", "Sharapova", 1986, "teacher", "blue");
+
+// console.log(teacher1);
+// teacher1.calcAge();
+
+// class Person {
+//   constructor(firstName, birthYar) {
+//     this.firstName = firstName;
+//     this.birthYar = birthYar;
+//   }
+//   calcAge() {
+//     console.log(2022 - this.birthYar)
+//   }
+// }
+
+// const thomas = new Person("Thomas", 1997);
+// thomas.calcAge();
+
+// class Person {
+//   constructor(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   }
+//   calcAge () {
+//     console.log(2022 - this.birthYear);
+//   };
+// }
+// const person1 = new Person("Martha", 1988);
+// console.log(person1.calcAge());
+
+// Destructuring Array
+const restourant = {
+  name: "Classico Italiano",
+  location: "Via Angelo Tavanti 23, Firenze, Italy",
+  categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
+  starterMenu: ["Fucaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
+  mainMenu: ["Pizza", "Pasta", "Risotto"],
 };
 
-btn.addEventListener("click", function () {
-  return (displayNum.textContent = randomNum(5));
-});
+const { name, location, categories } = restourant;
+
+const { name: RestourantName } = restourant;
+// console.log(RestourantName);
+
+//Create a new Array by expanding an existing Array
+const newMenu = [...restourant.mainMenu, "Gnocci"];
+
+//Copy Array (Shallow Copy)
+
+const mainMenuCopy = [...restourant.mainMenu];
+// console.log(mainMenuCopy);
+
+//Merge two Arrays togedher
+
+const combine = [...restourant.categories, ...restourant.starterMenu];
+// console.log(combine);
+
+// const str = "Asmongold";
+// let strUppper = str.toUpperCase();
+// const letters = [...strUppper, " ", "S."];
+
+// letters.sort(function(...letters){
+//   if(letters[0]<letters[1]) return -1;
+//   if(letters[0]>letters[1]) return 1;
+//   else 0
+// });
+// console.log(letters);
+
+// //REST
+
+// const arr2 = [1,2,3,4,5]
+// const [a,b,c, ...others] = arr2;
+
+// console.log(others)
+// const colors = ["red", "green", "blue"];
+
+// for (let color of colors.entries()) console.log(color);
+
+// const arr = [1,2,3,4,5,6];
+
+// const testMap = arr.map((el)=>el*2)
+// console.log(testMap)
+
+// const colors = ["red", "green", "blue"];
+// const clr = colors.map((color)=>color.toLocaleUpperCase())
+// const clrSorted = [...clr];
+// clrSorted.sort(function(...clr) {
+//   if (clr[0] < clr[1]) return -1;
+//   if (clr[0] > clr[1]) return 1;
+//   else 0;
+// })
+// console.log(clrSorted)
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// const usd = 1.1;
+
+// const convert = movements.map((el) => {
+//   return Math.floor(el * usd);
+// });
+
+const filtered = movements.filter((el) => el >= 0);
+console.log(filtered);
+
+const balance = movements.reduce((acc, el)=>{
+  return acc + el
+}, 0)
+console.log(balance)
